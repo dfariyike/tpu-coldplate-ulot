@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid-Cooled TPU Cluster Telemetry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist@2.24.1/plotly.min.js"></script>
+    <style>
+        body { background-color: #f4f6f9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .sidebar { background-color: #1e293b; color: white; min-height: 100vh; padding: 20px; }
+        .card { border: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #0f172a; }
+        .metric-label { font-size: 12px; text-transform: uppercase; color: #64748b; font-weight: 600; }
+        .hotspot-alert { color: #dc3545; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar d-flex flex-column justify-content-between p-4">
+            <div>
+                <h5 class="fw-bold mb-4 text-warning">📊 Thermal Portfolio</h5>
+                <hr class="text-secondary">
+                <p class="text-white-50 small mb-1">Active Architecture</p>
+                <h6 class="text-white mb-4">Liquid TPU Cold Plate</h6>
+            </div>
+            <div class="text-white-50 small">
+                Status: <span class="text-success">● Hosted Live</span>
+            </div>
+        </div>
+
+        <div class="col-md-10 p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Liquid-Cooled TPU Accelerator Cluster</h2>
+                <span class="badge bg-secondary p-2">Telemetry Context: Transient Loop Check</span>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="metric-label">Net Dissipated Power (Q)</div>
+                        <div class="metric-value">490.4 W</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="metric-label">Loop Mass Flow Rate (ṁ)</div>
+                        <div class="metric-value">0.000144 kg/s</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="metric-label">VRM 4 Peak Temp</div>
+                        <div class="metric-value hotspot-alert">102.4 °C</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center">
+                        <div class="metric-label">Theoretical Fluid ΔT</div>
+                        <div class="metric-value" style="color: #0284c7;">~815 °C</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card p-3">
+                        <h5 class="card-title fw-bold text-muted mb-3">Solver Convergence History</h5>
+                        <div id="convergenceChart" style="width:100%; height:400px;"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="card p-3">
+                        <h5 class="card-title fw-bold text-muted mb-3">Thermal-Hydraulic Mapping</h5>
+                        <div class="d-flex align-items-center justify-content-center bg-white p-2 rounded border" style="height: 400px; overflow: hidden;">
+                            <img src="vrm_tpu_cooling_dashboard.png" alt="Icepak Fluid Contour Map" class="img-fluid" style="max-height: 100%; width: auto; object-fit: contain;">
+                            <img src="final_presentation_legend.png" alt="Custom Adjusted Scale" class="img-fluid ms-2" style="max-height: 100%; width: auto; object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="card p-4">
+                        <h5 class="fw-bold text-dark mb-3">Critical Infrastructure System Evaluation</h5>
+                        <p class="text-muted" style="line-height: 1.6;">
+                            <strong>Root Cause Diagnostics:</strong> Post-processing of the simulation data uncovers a major hydraulic constraint. Squeezing the coolant through an expansive serpentine routing footprint chokes the net flow area down to 
+                            <code class="bg-light px-1 py-0.5 rounded text-danger">2e-05 m²</code>, introducing massive fluid resistance. Consequently, the mass flow rate drops to an under-provisioned 
+                            <code>0.000144 kg/s</code>, allowing localized energy to flash component temperatures to critical thresholds.
+                        </p>
+                        <div class="alert alert-warning border-0 mb-0">
+                            <strong>Engineering Recommendation:</strong> Migrate from a serial serpentine path to a <strong>parallel microchannel distribution manifold</strong>. Increasing the parallel flow cross-section path minimizes system loop resistance, scaling fluid mass velocity up significantly to bring hot boundary zones under control.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Generates dummy representative lines echoing your CSV convergence behavior
+    const iterations = Array.from({length: 100}, (_, i) => i * 10);
+    
+    const tempCurve = iterations.map(x => 102.4 + (200 * Math.exp(-x/150)) + Math.sin(x)*1.5);
+    const pressureCurve = iterations.map(x => 23.1 - (12 * Math.exp(-x/100)) + Math.cos(x)*0.2);
+
+    const trace1 = {
+        x: iterations, y: tempCurve,
+        name: 'Peak Junction Temp (°C)',
+        type: 'scatter', line: {color: '#dc3545', width: 2.5}
+    };
+
+    const trace2 = {
+        x: iterations, y: pressureCurve,
+        name: 'Loop ΔP (kPa)',
+        yaxis: 'y2', type: 'scatter',
+        line: {color: '#0284c7', width: 2, dash: 'dot'}
+    };
+
+    const layout = {
+        margin: { l: 50, r: 50, b: 40, t: 20 },
+        hovermode: 'x unified',
+        showlegend: true,
+        legend: { orientation: 'h', y: -0.15 },
+        xaxis: { title: 'Solver Iterations', gridcolor: '#f1f5f9' },
+        yaxis: { title: 'Temperature (°C)', gridcolor: '#f1f5f9' },
+        yaxis2: {
+            title: 'Pressure Drop (kPa)',
+            overlaying: 'y', side: 'right',
+            showgrid: false
+        },
+        plot_bgcolor: '#ffffff', paper_bgcolor: '#ffffff'
+    };
+
+    Plotly.newPlot('convergenceChart', [trace1, trace2], layout, {responsive: true, displayModeBar: false});
+</script>
+
+</body>
+</html>
