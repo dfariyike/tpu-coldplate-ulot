@@ -1,0 +1,193 @@
+Listing of values for variable: Heat flux [W/m2]
+Job: IcepakProj
+Title: 
+Written on Sat May 16 16:22:04 -0400 2026, by Ansys Icepak
+User: E40040954@epc-and0023
+
+Region: object {VRM 1} object {VRM 2} object {VRM 3} object {VRM 4} object TPU_Silicon.1 object {HBM Stack 1} object {HBM Stack 2} object {HBM Stack 3} object {HBM Stack 4} object {HBM Stack 5} object {HBM Stack 6} object {HBM Stack 7} object {HBM Stack 8}
+Total number of nodes: 7104
+
+time value = 0 s
+
+Object: block "VRM 1" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 55812.291666667 W/m2
+Surface area = 0.0002304 m2
+
+Pointwise Heat flux
+720 nodes:
+	min -5.04929
+	max 3.06304
+	mean -0.0897232
+	std dev 0.656322
+
+
+Object: block "VRM 2" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 54726.063333333 W/m2
+Surface area = 0.0002304 m2
+
+Pointwise Heat flux
+446 nodes:
+	min -2.46502
+	max 4.68219
+	mean 0.106475
+	std dev 0.642617
+
+
+Object: block "VRM 3" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 56706.61 W/m2
+Surface area = 0.0002304 m2
+
+Pointwise Heat flux
+624 nodes:
+	min -4.97417
+	max 5.29856
+	mean -0.177431
+	std dev 0.994447
+
+
+Object: block "VRM 4" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 54805.451666667 W/m2
+Surface area = 0.0002304 m2
+
+Pointwise Heat flux
+446 nodes:
+	min -9.89229
+	max 8.07198
+	mean -0.0574833
+	std dev 1.7068
+
+
+Object: block "TPU_Silicon.1" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 47542.578333333 W/m2
+Surface area = 0.001884 m2
+
+Pointwise Heat flux
+1652 nodes:
+	min -2.00875
+	max 7.24429
+	mean 0.16792
+	std dev 0.780864
+
+
+Object: block "HBM Stack 1" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 33004.440166667 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+372 nodes:
+	min -13.5676
+	max 1.98221
+	mean -0.326036
+	std dev 1.67343
+
+
+Object: block "HBM Stack 2" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 33008.417833333 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+372 nodes:
+	min -14.1939
+	max 1.90877
+	mean -0.616195
+	std dev 2.18213
+
+
+Object: block "HBM Stack 3" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 32989.862333333 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+472 nodes:
+	min -15.1623
+	max 2.15802
+	mean -0.482033
+	std dev 2.13137
+
+
+Object: block "HBM Stack 4" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 33072.078 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+492 nodes:
+	min -7.8193
+	max 2.39359
+	mean -0.22789
+	std dev 1.11033
+
+
+Object: block "HBM Stack 5" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 32923.364666667 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+272 nodes:
+	min -4.83668
+	max 4.54733
+	mean -0.0824307
+	std dev 0.9072
+
+
+Object: block "HBM Stack 6" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 33011.5065 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+272 nodes:
+	min -20.3491
+	max 5.94379
+	mean -0.343934
+	std dev 2.70499
+
+
+Object: block "HBM Stack 7" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 33017.601666667 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+492 nodes:
+	min -9.43955
+	max 2.17113
+	mean -0.290996
+	std dev 1.34096
+
+
+Object: block "HBM Stack 8" Sides: minx maxx miny maxy minz maxz ----
+
+
+Heat flux = 32879.7175 W/m2
+Surface area = 0.000228 m2
+
+Pointwise Heat flux
+472 nodes:
+	min -68261.4
+	max 291118
+	mean 48431.5
+	std dev 101134
+
+

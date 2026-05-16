@@ -1,0 +1,19 @@
+Summary report for IcepakProj ()
+Solution id IcepakProj0
+Sat May 16 16:35:12 -0400 2026
+
+
+Object,Section,Sides,Value,Min,Max,Mean,Stdev,Area/volume,Mesh
+TPU_Silicon.1,All,All,Temperature (C),120.548 ,173.168 ,167.35 ,7.7937 ,0.001884 m2,Full
+HBM Stack 1,All,All,Temperature (C),115.303 ,148.829 ,126.434 ,3.90005 ,0.000228 m2,Full
+HBM Stack 2,All,All,Temperature (C),113.155 ,148.346 ,125.191 ,4.00648 ,0.000228 m2,Full
+HBM Stack 3,All,All,Temperature (C),115.763 ,154.414 ,127.695 ,4.77374 ,0.000228 m2,Full
+HBM Stack 4,All,All,Temperature (C),116.832 ,154.354 ,128.205 ,4.66331 ,0.000228 m2,Full
+HBM Stack 5,All,All,Temperature (C),114.92 ,150.906 ,126.641 ,4.03006 ,0.000228 m2,Full
+HBM Stack 6,All,All,Temperature (C),117.129 ,150.007 ,127.954 ,3.98001 ,0.000228 m2,Full
+HBM Stack 7,All,All,Temperature (C),121.039 ,158.662 ,132.005 ,4.63252 ,0.000228 m2,Full
+HBM Stack 8,All,All,Temperature (C),120.208 ,158.974 ,131.497 ,4.77248 ,0.000228 m2,Full
+VRM 1,All,All,Temperature (C),113.969 ,305.355 ,285.109 ,43.3026 ,0.0002304 m2,Full
+VRM 2,All,All,Temperature (C),94.8947 ,299.8 ,270.59 ,51.1 ,0.0002304 m2,Full
+VRM 3,All,All,Temperature (C),104.727 ,299.707 ,276.369 ,46.4582 ,0.0002304 m2,Full
+VRM 4,All,All,Temperature (C),91.5045 ,296.779 ,267.624 ,51.0484 ,0.0002304 m2,Full
